@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3
+      - image: circleci/postgres:11.2
+    steps:
+      - checkout
+      - run: echo "A first hello"
+
+#  test:
+#    docker:
+#      - image: circleci/ruby:2.6.3
+#      - image: circleci/postgres:11.2
+#    steps:
+#      - checkout
+#      - run:
+#          name: bundle install
+#          no_output_timeout: 15m
+#          command: |
+#            bundle install --jobs=4 --retry=3 --path vendor/bundle
+#      - restore_cache:
+#          key: circle_ci_sample-{{ checksum "Gemfile.lock" }}
+#      - save_cache:
+#          key: circle_ci_sample-{{ checksum "Gemfile.lock" }}
+#          paths:
+#            - ".git"
