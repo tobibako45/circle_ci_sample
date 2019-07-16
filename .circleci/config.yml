@@ -6,7 +6,7 @@ jobs:
       - image: circleci/postgres:11.2
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run: echo "A second hello"
 
 #  test:
 #    docker:
